@@ -20,13 +20,12 @@ and [test_handcrafted.py](https://github.com/Robert0831/NNClassfication/blob/mai
 Pretrain model 
 ----------------------------------------------------------------------------
 
-two-layer:[weights.pkl](https://github.com/Robert0831/NNClassfication/blob/main/weights.pkl)
+LeNet5:[weights.pkl](https://github.com/Robert0831/NNClassfication/blob/main/weights.pkl)
 
 LeNet5:[Lanet_weights.pkl](https://github.com/Robert0831/NNClassfication/blob/main/weights.pkl)
 
-Improved LeNet5:[NLanet_weights.pkl](https://github.com/Robert0831/NNClassfication/blob/main/weights.pkl)
+LeNet5:[NLanet_weights.pkl](https://github.com/Robert0831/NNClassfication/blob/main/weights.pkl)
 
-if want to load pretrain model,there have be a line is  EX.model=LeNet5(weights="pretrain model flie name") 
 
 Reference
 ----------------------------------------------------------------------------
