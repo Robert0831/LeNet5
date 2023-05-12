@@ -4,28 +4,39 @@ Train model,use [train2.txt](https://github.com/Robert0831/NNClassfication/blob/
 
 Trining
 ----------------------------------------------------------------------------
-To train two-layer model ,directly execution [fnn.py](https://github.com/Robert0831/NNClassfication/blob/main/fnn.py)
+To train pytorch:[lenet_tor.py](https://github.com/Robert0831/LeNet5/blob/main/lenet_tor.py)
 
-To train LeNet5 ,directly execution [Lenet.py](https://github.com/Robert0831/NNClassfication/blob/main/Lenet.py)
+To train tensorflow:[lenet_tf.py](https://github.com/Robert0831/LeNet5/blob/main/lenet_tf.py)
 
-To train Improved LeNet5 ,directly execution [NLenet.py](https://github.com/Robert0831/NNClassfication/blob/main/NLenet.py)
+To train tensorflow-static:[lenet_sta.py](https://github.com/Robert0831/LeNet5/blob/main/lenet_sta.py)
+
+To train handcrafted:[Lenet.py](https://github.com/Robert0831/LeNet5/blob/main/Lenet.py)
 
 Testing
 ----------------------------------------------------------------------------
 
-To test three model directly execution [test.py](https://github.com/Robert0831/NNClassfication/blob/main/test.py)
-and [test_handcrafted.py](https://github.com/Robert0831/NNClassfication/blob/main/test.py)(for handcraft-model)
+To test model execution [test.py](https://github.com/Robert0831/LeNet5/blob/main/test.py)
+and [test_handcrafted.py](https://github.com/Robert0831/LeNet5/blob/main/test_handcrafted.py) (for handcraft-model)
 
 
 Pretrain model 
 ----------------------------------------------------------------------------
 
-LeNet5:[weights.pkl](https://github.com/Robert0831/NNClassfication/blob/main/weights.pkl)
+LeNet5-handcrafted:[Lanet_weights.pkl](https://github.com/Robert0831/LeNet5/blob/main/Lanet_weights.pkl)
 
-LeNet5:[Lanet_weights.pkl](https://github.com/Robert0831/NNClassfication/blob/main/weights.pkl)
+LeNet5-pytorch:[tor_model_49.pth](https://github.com/Robert0831/LeNet5/blob/main/tor_model_49.pth)
 
-LeNet5:[NLanet_weights.pkl](https://github.com/Robert0831/NNClassfication/blob/main/weights.pkl)
+LeNet5-tensorflow:[tf_model_49.keras](https://github.com/Robert0831/LeNet5/blob/main/tf_model_49.keras)
 
+LeNet5-tensorflow_static:[tf_model_static.keras](https://github.com/Robert0831/LeNet5/blob/main/tf_model_static.keras)
+
+pytorh_Post Training Dynamic Quantization:[quantized_model.pth](https://github.com/Robert0831/LeNet5/blob/main/quantized_model.pth)
+
+pytorh_Post Pruning:[quantized_model_1.pth](https://github.com/Robert0831/LeNet5/blob/main/quantized_model_1.pth)
+
+Model compression
+----------------------------------------------------------------------------
+Use [tor_qat.py](https://github.com/Robert0831/LeNet5/blob/main/tor_qat.py) to do Post Training Dynamic Quantization or Pruning
 
 Reference
 ----------------------------------------------------------------------------
