@@ -542,22 +542,37 @@ def tolabel(y):
     a[0][y]=1
     return np.expand_dims(a,0)
 
+# def getimg(set,idx):
+#     images=[]
+#     for i in range(5):
+#         img=set['dir'][int(idx+i)]
+#         img = cv2.imread(img)
+#         img = cv2.resize(img, (64, 64))
+#         img=img/255
+#         img=img.transpose(2,0,1)
+#         images.append(img)
+#     return np.array(images)
+
 def getimg(set,idx):
     images=[]
-    for i in range(5):
-        img=set['dir'][int(idx+i)]
-        img = cv2.imread(img)
-        img = cv2.resize(img, (64, 64))
-        img=img/255
-        img=img.transpose(2,0,1)
-        images.append(img)
+    img=set['dir'][int(idx)]
+    img = cv2.imread(img)
+    img = cv2.resize(img, (64, 64))
+    img=img/255
+    img=img.transpose(2,0,1)
+    images.append(img)
     return np.array(images)
+# def getlabel(set,idx):
+#     labels=[]
+#     for i in range(5):
+#         labels.append(set['class'][int(idx+i)])
+#     return np.array(labels)
+
 def getlabel(set,idx):
     labels=[]
-    for i in range(5):
-        labels.append(set['class'][int(idx+i)])
+    
+    labels.append(set['class'][int(idx)])
     return np.array(labels)
-
 
 
 model2=LeNet5('Lanet_weights.pkl')
@@ -572,20 +587,20 @@ score2=0
 times=[]
 
 for iv in range(0,len(testset),1):
-        imgv=getimg(testset,iv)
-        labelv=getlabel(testset,iv)
-        labelv=MakeOneHot(labelv,50)
-        labelv=np.argmax(labelv,1)
+    imgv=getimg(testset,iv)
+    labelv=getlabel(testset,iv)
+    labelv=MakeOneHot(labelv,50)
+    labelv=np.argmax(labelv,1)
 
 
-        start=time.time()
-        Y_pred2 = model2.forward(imgv)
-        times.append(time.time() - start)
-        out2=np.argmax(Y_pred2,1)
-        for j in range(out2.shape[0]):
-            if out2[j]==labelv[j]:
-                score2+=1
-
+    start=time.time()
+    Y_pred2 = model2.forward(imgv)
+    times.append(time.time() - start)
+    out2=np.argmax(Y_pred2,1)
+    for j in range(out2.shape[0]):
+        if out2[j]==labelv[j]:
+            score2+=1
+    print(iv)
 
 
 print(f'batch=1  infereance time :{round(round(sum(times)/len(times),5))} ;LeNet5 top-1 accuracy:{round(score2/totalt,5)} ') 
